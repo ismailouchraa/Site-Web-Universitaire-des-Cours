@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Université - Partage de Cours</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo Université">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un cours...">
+                <button type="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue sur la plateforme de cours</h1>
+                <p>Accédez à tous vos cours en ligne facilement</p>
+                <a href="branches.html" class="cta-button">Découvrir les branches</a>
+            </div>
+            <div class="hero-images">
+                <img src="image/accueil.jpeg" alt="Image 1" class="hero-image">
+                <img src="image/accueil1.png" alt="Image 2" class="hero-image">
+                <img src="image/accueil2.png" alt="Image 3" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Featured Branches -->
+        <section class="featured-branches">
+            <h2>Nos Branches</h2>
+            <div class="branches-grid">
+                <!-- Génie Logiciel -->
+                <div class="branch-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Informatique</h3>
+                    <p>Génie Logiciel</p>
+                    <a href="branches/genie-logiciel.html" class="branch-link">Voir les cours</a>
+                </div>
+
+                <!-- Physique et Chimie -->
+                <div class="branch-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Physique et Chimie</h3>
+                    <p>Sciences fondamentales et applications</p>
+                    <a href="branches/filiere-generale-erreur.html" class="branch-link">Voir les cours</a>
+                </div>
+
+                <!-- Sciences Économiques et Gestion -->
+                <div class="branch-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Sciences Économiques & Gestion</h3>
+                    <p>Économie, gestion, et administration</p>
+                    <a href="branches/filiere-generale-erreur.htmll" class="branch-link">Voir les cours</a>
+                </div>
+            </div>
+
+            <!-- Voir plus -->
+            <div class="see-more">
+                <a href="branches.html" class="see-more-link">Voir plus de branches</a>
+            </div>
+        </section>
+
+
+        <!-- Quick Access -->
+        <section class="quick-access">
+            <h2>Accès Rapide</h2>
+            <div class="quick-access-grid">
+                <div class="quick-access-card">
+                    <h3>Par Année</h3>
+                    <ul>
+                        <li><a href="#">1ère année</a></li>
+                        <li><a href="#">2ème année</a></li>
+                        <li><a href="#">3ème année</a></li>
+                    </ul>
+                </div>
+
+                <div class="quick-access-card">
+                    <h3>Par Semestre</h3>
+                    <ul>
+                        <li><a href="#">Semestre 1</a></li>
+                        <li><a href="#">Semestre 2</a></li>
+                    </ul>
+                </div>
+
+                <div class="quick-access-card">
+                    <h3>Documents Récents</h3>
+                    <ul>
+                        <li><a href="https://lnajdi.github.io/web-programming-1/Slides/">Cours Programmation Web 1 </a></li>
+                        <li><a href="https://lnajdi.github.io/web-programming-1/Labs/">TP 2 programmation Web 1</a></li>
+                        <li><a href="Cours/Cours_Sadiq_FPT_programmation_C_2024-25_partie1.1.pdf">Cours Programmation C</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Hay El Mohammadi (Lastah), B.P : 271, 83 000 Taroudant, Maroc</p>
+                <p><i class="fas fa-phone"></i> (+212) 05 28 55 10 10</p>
+                <p><i class="fas fa-fax"></i> (+212) 05 28 55 10 20</p>
+                <p><i class="fas fa-envelope"></i> FPTaroudant@univ-ibnzohr.ac.ma</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Université. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Script pour faire défiler les images dans la section hero
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.hero-image');
+            let currentImageIndex = 0;
+        
+            function changeImage() {
+                images.forEach((img, index) => {
+                    img.classList.remove('active');
+                    if (index === currentImageIndex) {
+                        img.classList.add('active');
+                    }
+                });
+        
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+        
+            setInterval(changeImage, 5000); // Change l'image toutes les 5 secondes
+            changeImage(); // Initialiser la première image active
+        });
+        </script>
+</body>
+</html>

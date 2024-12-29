@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filières Universitaires</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        
+        /* Main Content */
+        main {
+            padding: 2rem;
+            margin-top: 7rem;
+            margin-bottom: 18rem;
+        }
+
+        .branch-detail {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .branch-detail h1 {
+            color: #333;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .branch-detail .message {
+            background-color: #f44336;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .branch-detail .message i {
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            width: 30%;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 0.5rem 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../image/logo.png" alt="Logo Université">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../branches.html" class="active">Branches</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher une branche...">
+                <button type="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="branch-detail">
+            <h1></h1>
+
+            <div class="message">
+                <i class="fas fa-exclamation-triangle"></i>
+                Aucun cours n'est disponible pour cette filière pour le moment.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Hay El Mohammadi (Lastah), B.P : 271, 83 000 Taroudant, Maroc</p>
+                <p><i class="fas fa-phone"></i> (+212) 05 28 55 10 10</p>
+                <p><i class="fas fa-fax"></i> (+212) 05 28 55 10 20</p>
+                <p><i class="fas fa-envelope"></i> FPTaroudant@univ-ibnzohr.ac.ma</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../branches.html">Branches</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Université. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Génie Logiciel (Informatique) - Université</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+                /* Style général pour la page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        /* Section de la branche */
+        
+.branch-detail {
+    padding: 8rem 4rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.branch-detail h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-decoration: underline;
+
+}
+.branch-detail h2 {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 1.6;
+
+    margin-bottom: 1rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.branch-detail p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 2;
+    text-align: center;;
+}
+
+.branch-detail ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.branch-detail ul li {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.branch-detail ul li .module-title {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.branch-detail ul li .module-description {
+    font-size: 0.95rem;
+    color: #777;
+    margin-top: 0.25rem;
+}
+
+.branch-detail ul li .actions {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.branch-detail ul li .actions a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.branch-detail ul li .actions a:hover {
+    background-color: #1976d2;
+}
+
+.branch-detail .semester {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.branch-detail .semester h3 {
+    background-color: #a1a1a1;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.branch-detail .semester h3:hover {
+    background-color: #d4cece;
+}
+
+.branch-detail .semester i {
+    transition: transform 0.3s;
+}
+
+.branch-detail .semester.active h3 {
+    background-color: #4caf50;
+}
+
+.branch-detail .semester.active i {
+    transform: rotate(180deg);
+}
+
+.branch-detail .semester ul {
+    display: none;
+    margin-top: 1rem;
+}
+
+.branch-detail .semester.active ul {
+    display: block;
+}
+
+/* Animation pour afficher les modules */
+.branch-detail .semester ul li {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.branch-detail .semester ul li .actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Responsivité : ajustement de la mise en page pour les petits écrans */
+@media (max-width: 768px) {
+    .branch-detail {
+        padding: 1rem 2rem;
+    }
+
+    .branch-detail h2 {
+        font-size: 1.75rem;
+    }
+
+    .branch-detail ul {
+        padding-left: 1rem;
+    }
+
+    .branch-detail ul li {
+        font-size: 0.95rem;
+    }
+
+    .branch-detail .semester h3 {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .branch-detail .semester ul li {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Header*/
+
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 10px 0;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style des semestres */
+        .semester {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .semester:hover {
+            background-color: #eaf2f8;
+        }
+
+        .semester h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .semester h3 i {
+            color: #007BFF;
+            transition: transform 0.3s ease;
+        }
+
+        .semester.active h3 i {
+            transform: rotate(180deg); /* Flèche inversée */
+        }
+
+        /* Style des listes de modules */
+        .semester ul {
+            display: none; /* Masqué par défaut */
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            max-height: 0; /* Transition basée sur la hauteur maximale */
+        }
+
+        .semester.active ul {
+            display: block; /* Affiche la liste des modules */
+            max-height: 500px; /* Ajustez cette valeur selon la hauteur estimée de la liste */
+            transition: max-height 0.5s ease-in;
+        }
+
+       /* Module */
+        .semester ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .module-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .actions a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2196f3;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .actions a:hover {
+            color: #1976d2;
+        }
+
+        .actions a i {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .actions .read i {
+            color: #4caf50;
+        }
+
+        .actions .download i {
+            color: #f44336;
+        }
+
+        .actions a:hover i {
+            transform: scale(1.1);
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../image/logo.png" alt="Logo Université">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../branches.html" class="active">Branches</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un cours...">
+                <button type="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="branch-detail">
+            <h1>Génie Logiciel (Informatique)</h1>
+            <p>Bienvenue dans la filière Génie Logiciel. Retrouvez ci-dessous les modules organisés par semestre, avec des cours disponibles pour lecture ou téléchargement.</p>
+            
+            <div class="branch-semesters">
+                <h2>Modules par Semestre</h2>
+
+                <!-- Semestre 1 -->
+                <div class="semester">
+                    <h3>Semestre 1 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>
+                            <span class="module-title">Analyse 1</span>
+                            <div class="actions">
+                                <a href="../Cours/Analyse 1.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/Analyse 1.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="module-title">Algebre 1</span>
+                            <div class="actions">
+                                <a href="../Cours/cours Algèbre1 -1.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/cours Algèbre1 -1.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                           
+                        </li>
+                        <li>
+                            <span class="module-title">informatique 1: Algorithme 1/ python</span>
+                            <div class="actions">
+                                <a href="../Cours/cours 2.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/cours 2.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Semestre 3 -->
+                <div class="semester">
+                    <h3>Semestre 2 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>
+                            <span class="module-title">Analyse 2</span>
+                            <div class="actions">
+                                <a href="../Cours/Analyse 1.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/Analyse 1.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="module-title">Algebre 2</span>
+                            <div class="actions">
+                                <a href="../Cours/cours Algèbre1 -1.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/cours Algèbre1 -1.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="module-title">informatique 2: Algorithme 2/ python</span>
+                            <div class="actions">
+                                <a href="../Cours/PE - fichiers sous python.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/PE - fichiers sous python.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Semestre 3 -->
+                <div class="semester">
+                    <h3>Semestre 3 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>
+                            <span class="module-title">Programmation Web 1</span>
+                            <div class="actions">
+                                <a href="https://lnajdi.github.io/web-programming-1/Slides/" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="https://lnajdi.github.io/web-programming-1/Slides/" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="module-title">Programmation En language C</span>
+                            <div class="actions">
+                                <a href="../Cours/Cours_Sadiq_FPT_programmation_C_2024-25_partie1.1.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/Cours_Sadiq_FPT_programmation_C_2024-25_partie1.1.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+
+                          
+                        </li>
+                        <li>
+                            <span class="module-title">Architecture des Ordinateurs</span>
+                            <div class="actions">
+                                <a href="../Cours/AO_.pdf" class="read" target="_blank">
+                                    <i class="fas fa-eye"></i> Lire
+                                </a>
+                                <a href="../Cours/AO_.pdf" class="download" download>
+                                    <i class="fas fa-arrow-down"></i> Télécharger
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <!-- Semestre 4 -->
+                <div class="semester">
+                    <h3>Semestre 4 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <!-- Modules à ajouter -->
+                    </ul>
+                </div>
+                
+
+                <!-- Semestre 5 -->
+                <div class="semester">
+                    <h3>Semestre 5 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <!-- Modules à ajouter -->
+                    </ul>
+                </div>
+                
+                <!-- Semestre 6 -->
+                <div class="semester">
+                    <h3>Semestre 6 <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <!-- Modules à ajouter -->
+                    </ul>
+                </div>
+
+                
+            
+                
+                
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Hay El Mohammadi (Lastah), B.P : 271, 83 000 Taroudant, Maroc</p>
+                <p><i class="fas fa-phone"></i> (+212) 05 28 55 10 10</p>
+                <p><i class="fas fa-fax"></i> (+212) 05 28 55 10 20</p>
+                <p><i class="fas fa-envelope"></i> FPTaroudant@univ-ibnzohr.ac.ma</p>
+            </div>
+            
+
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../branches.html">Branches</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Université. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Récupérer tous les semestres
+            const semesters = document.querySelectorAll(".semester");
+
+            semesters.forEach(semester => {
+                // Ajouter un événement au clic
+                semester.addEventListener("click", () => {
+                    // Trouver la liste des modules (ul) correspondante
+                    const moduleList = semester.querySelector("ul");
+
+                    // Si la liste est déjà affichée, la masquer
+                    if (moduleList.style.display === "block") {
+                        moduleList.style.display = "none";
+                        semester.classList.remove("active"); // Retirer la classe active
+                    } else {
+                        // Sinon, masquer les autres semestres et afficher celui cliqué
+                        semesters.forEach(s => {
+                            const otherList = s.querySelector("ul");
+                            if (otherList) {
+                                otherList.style.display = "none";
+                                s.classList.remove("active");
+                            }
+                        });
+
+                        moduleList.style.display = "block";
+                        semester.classList.add("active"); // Ajouter la classe active
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>

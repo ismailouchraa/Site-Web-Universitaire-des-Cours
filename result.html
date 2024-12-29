@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de recherche</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css"> <!-- Votre fichier CSS -->
+    <style>/* Styles globaux */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Conteneur des résultats */
+        #searchResults {
+            padding: 20px;
+            margin: 5rem 0;
+        }
+        
+        /* Style des éléments de résultats */
+        .search-result-item {
+            background-color: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-result-item h1,
+        .search-result-item h2,
+        .search-result-item h3,
+        .search-result-item h4,
+        .search-result-item h5,
+        .search-result-item h6 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .search-result-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        /* Pagination ou message lorsque aucun résultat n'est trouvé */
+        #searchResults p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+        
+        /* Responsivité */
+        @media (max-width: 768px) {
+
+            #searchResults {
+                padding: 15px;
+                margin: 1rem;
+            }
+        
+            .search-result-item {
+                padding: 0.8rem;
+            }
+        }
+        </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo Université">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="branches.html" class="active">Branches</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un cours...">
+                <button type="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+    <!-- Conteneur des résultats -->
+    <div id="searchResults"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Hay El Mohammadi (Lastah), B.P : 271, 83 000 Taroudant, Maroc</p>
+                <p><i class="fas fa-phone"></i> (+212) 05 28 55 10 10</p>
+                <p><i class="fas fa-fax"></i> (+212) 05 28 55 10 20</p>
+                <p><i class="fas fa-envelope"></i> FPTaroudant@univ-ibnzohr.ac.ma</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Université. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchResultsContainer = document.getElementById('searchResults');
+
+            // Récupérer les résultats du localStorage
+            const searchResults = JSON.parse(localStorage.getItem('searchResults'));
+
+            // Vérifier s'il y a des résultats
+            if (searchResults && searchResults.length > 0) {
+                searchResults.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('search-result-item');
+                    resultItem.innerHTML = result; // Ajouter l'élément parent comme HTML
+                    searchResultsContainer.appendChild(resultItem);
+                });
+            } else {
+                searchResultsContainer.innerHTML = '<p>Aucun résultat trouvé.</p>';
+            }
+        });
+
+    </script>
+</body>
+</html>

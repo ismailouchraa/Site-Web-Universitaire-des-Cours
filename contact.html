@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Université</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Contact Page Styles */
+        .contact-section {
+            padding-top:  70px ;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-bottom: 3rem;
+
+            background-color: #f4f7fb;
+        }
+        
+        .contact-section h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-details {
+            flex: 1;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-details h3 {
+            color: #2196f3;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .contact-details i {
+            margin-right: 12px;
+            color: #2196f3;
+        }
+        
+        .contact-form {
+            flex: 2;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            color: #2196f3;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            color: #333;
+            box-sizing: border-box;
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border: 1px solid #2196f3;
+        }
+        
+        .contact-form button {
+            background-color: #2196f3;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: #1976d2;
+        }
+        
+        #responseMessage {
+            font-size: 1.1rem;
+            color: green;
+            margin-top: 15px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
+        
+            .contact-form {
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-details h3 {
+                font-size: 1.2rem;
+            }
+        
+            .contact-form h3 {
+                font-size: 1.3rem;
+            }
+        
+            .contact-form input, .contact-form textarea {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+        
+            .contact-form button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo Université">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher un cours...">
+                <button type="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="contact-section">
+            <h1>Contactez-Nous</h1>
+            <div class="contact-info">
+                <div class="contact-details">
+                    <h3>Adresse</h3>
+                    <p>Hay El Mohammadi (Lastah), B.P : 271, 83 000 Taroudant, Maroc</p>
+
+                    <h3>Téléphone</h3>
+                    <p><i class="fas fa-phone"></i> (+212) 05 28 55 10 10</p>
+
+                    <h3>Fax</h3>
+                    <p><i class="fas fa-fax"></i> (+212) 05 28 55 10 20</p>
+
+                    <h3>Email</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:FPTaroudant@univ-ibnzohr.ac.ma">FPTaroudant@univ-ibnzohr.ac.ma</a></p>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Formulaire de Contact</h3>
+                    <form id="contactForm">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    <div id="responseMessage" style="display:none; color: green; margin-top: 10px;">
+                        Merci pour votre message. Nous reviendrons vers vous rapidement.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Rue de l'Université</p>
+                <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@universite.fr</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Université. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher la soumission par défaut du formulaire
+
+            // Simuler l'envoi du formulaire et afficher un message de confirmation
+            document.getElementById('responseMessage').style.display = 'block';
+
+            // Réinitialiser le formulaire après soumission
+            document.getElementById('contactForm').reset();
+        });
+
+    </script>
+</body>
+</html>
